@@ -367,11 +367,6 @@ h5 {
     50% { right: -50%; }
     100% { right: 0; }
     }
-    @keyframes sideNavOut {
-    0% { right: 0; }
-    50% { right: -50%; }
-    100% { right: -100%;}
-    }
   
   .nav-bar-mobile-open-container{
     width: 100%;
