@@ -362,10 +362,6 @@ h5 {
     z-index: 2;
   }
 
-  .nav-bar-mobile-open.hidden{
-    animation: sideNavOut 0.5s ease-out;
-  }
-
   @keyframes sideNavIn {
     0%{ right: -100%; }
     50% { right: -50%; }
