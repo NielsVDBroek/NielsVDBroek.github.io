@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles/main.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <title>Portfolio Niels van den Broek</title>
+  </head>
+  <body>
+    <header class="header">
+      <!-- Deze website gebruikt voor het linken naar een bepaalde plek in de pagina https://blog.hubspot.com/marketing/jump-link-same-page -->
+      <nav class="nav-bar">
+        <a id="nav-item-1" class="nav-item" href="#home">Home</a>
+        <a id="nav-item-2" class="nav-item" href="#mijn-werk">Mijn werk</a>
+        <a id="nav-item-3" class="nav-item" href="#over-mij">Over mij</a>
+        <a id="nav-item-4" class="nav-item" href="#contact">Contact</a>
+      </nav>
+      <div class="progress-container">
+        <div class="progress-bar" id="myBar"></div>
+      </div>
+      <nav class="nav-bar-mobile">
+        <div class="hamburger-menu" onclick="toggleNav()">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </nav>
+    </header>
+    <nav class="nav-bar-mobile-open hidden" id="mobile-nav">
+      <div class="nav-bar-mobile-open-container">
+        <div class="nav-bar-open-exit">
+          <i class="fa-solid fa-xmark" onclick="toggleNav()"></i>
+        </div>
+        <div class="nav-bar-mobile-open-items">
+          <a class="nav-item" href="#home">Home</a>
+          <a class="nav-item" href="#mijn-werk">Mijn werk</a>
+          <a class="nav-item" href="#over-mij">Over mij</a>
+          <a class="nav-item" href="#contact">Contact</a>
+        </div>
+      </div>
+    </nav>
+    <main>
+      <div class="page" id="home">
+        <div class="home-container">
+          <div class="home-text">
+            <div>
+              <h1>Software Developer</h1>
+            </div>
+            <div class="home-text-languages">
+              <h3>Java</h3>
+              <h3>HTML / CSS</h3>
+            </div>
+            <div>
+              <h3>Back-end Developer</h3>
+            </div>
+            <div>
+              <h4>Niels van den Broek</h4>
+            </div>
+          </div>
+          <div class="home-icons">
+            <img class="home-icon" src="icons/java.png" alt="java-image" />
+            <img class="home-icon" src="icons/HTML.png" alt="HTML-image" />
+            <img class="home-icon" src="icons/CSS.png" alt="CSS-image" />
+          </div>
+        </div>
+      </div>
+      <div class="page" id="mijn-werk">
+        <h2>Mijn werk</h2>
+        <div class="mijn-werk-container">
+          <a
+            class="mijn-werk-component"
+            href="sub-pages/component-library.html"
+          >
+            <div class="mijn-werk-component-title">
+              <h5>Component Library</h5>
+            </div>
+            <div class="mijn-werk-component-main">
+              <p>
+                Een website waarin voorbeelden staan van verschillende elementen
+                in HTML en CSS.<br />
+                Zo gemaakt zodat er altijd componenten bijgevoegd en/of
+                verwijderd kunnen worden.<br />
+                Elk component verwijst naar een pagina met een voorbeeld van dat
+                element.
+              </p>
+              <img
+                class="mijn-werk-image"
+                src="images/Component-library-main.jpg"
+                alt="component-library-main-image"
+              />
+            </div>
+          </a>
+          <a class="mijn-werk-component" href="sub-pages/mastermind.html">
+            <div class="mijn-werk-component-title">
+              <h5>Mastermind Game</h5>
+            </div>
+            <div class="mijn-werk-component-main">
+              <p>
+                Een Java applicatie die het spel Mastermind / Code breaker in de
+                console laat spelen.<br />
+                Speel tegen de computer of een vriend en probeer de geheime code
+                te kraken.<br />
+              </p>
+              <img
+                class="mijn-werk-image"
+                src="images/Mastermind-main.jpg"
+                alt="mastermind-main-image"
+              />
+            </div>
+          </a>
+        </div>
+      </div>
+      <div class="page" id="over-mij">
+        <h2>Over mij</h2>
+        <div class="over-mij-text">
+          <p>
+            Ik ben Niels van den Broek, ik ben 18 jaar en ik kom uit Wijchen,
+            Gelderland. Ik doe de opleiding MBO-Software Developer op het ROC in
+            Nijmegen. Ik ben een Back-end developer die gericht is op Java en
+            HTML / CSS.
+          </p>
+        </div>
+      </div>
+      <div class="page" id="contact">
+        <h2>Contact</h2>
+        <div class="contact-container">
+          <div class="contact-text">
+            <p>
+              Als u graag contact met mij wil opnemen om werk gerelateerde
+              vragen of om vragen te stellen. stuur dan een mail naar het
+              volgende E-mail adress
+            </p>
+            <p class="contact-email">Niels.BroekVanDen@gmail.com</p>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- Voor het maken van de scroll bar, heb ik deze website gebruikt: https://www.w3schools.com/howto/howto_js_scroll_indicator.asp -->
+    <script>
+      // When the user scrolls the page, execute myFunction
+      window.onload = function() {
+        loadProgressBar();
+      }
+      window.onscroll = function () {
+        progressBar();
+      };
+
+      function loadProgressBar() {
+        var startPosition = ((175 / 600) * 100);
+        document.getElementById("myBar").style.width = startPosition + "%";
+      }
+
+      function progressBar() {
+        var winScroll =
+          document.body.scrollTop || document.documentElement.scrollTop;
+        var height =
+          document.documentElement.scrollHeight -
+          document.documentElement.clientHeight;
+        var scrolled = (winScroll / height) * 100;
+        
+        var mijnWerkPosition = document.getElementById("mijn-werk").offsetTop;
+
+        var overMijPosition = document.getElementById("over-mij").offsetTop;
+
+        var contactPosition = document.getElementById("contact").offsetTop;
+
+        var mijnWerkPercentage = (mijnWerkPosition / height) * 100 - 1;
+        var overMijPercentage = (overMijPosition / height) * 100 - 1;
+        var contactPercentage = (contactPosition / height) * 100 - 1;
+
+        var homeToMijnWerk = (winScroll / mijnWerkPosition);
+        var mijnWerkToOverMij = ((winScroll - mijnWerkPosition) / (overMijPosition - mijnWerkPosition));
+        var overMijToContact = ((winScroll - overMijPosition) / (contactPosition - overMijPosition));
+
+        var startPosition = ((175 / 600) * 100);
+
+        if (scrolled <= mijnWerkPercentage) {
+          document.getElementById("nav-item-2").style.color = "white";
+          if(scrolled > 0){
+            document.getElementById("myBar").style.width = startPosition + (((425 / 3) * (homeToMijnWerk)) / 600) * 100 + "%";
+          }
+        } else {
+          document.getElementById("nav-item-2").style.color = "#91def9";
+        }
+
+        if (scrolled <= overMijPercentage) {
+          document.getElementById("nav-item-3").style.color = "white";
+          if(scrolled > mijnWerkPercentage){
+            document.getElementById("myBar").style.width = startPosition + (((425 / 3) + ((425 / 3) * mijnWerkToOverMij)) / 600) * 100 + "%";
+          }
+        } else {
+          document.getElementById("nav-item-3").style.color = "#6ec0fb";
+        }
+
+        if (scrolled <= contactPercentage) {
+          document.getElementById("nav-item-4").style.color = "white";
+          if(scrolled > overMijPercentage){
+            document.getElementById("myBar").style.width = startPosition + ((((425 / 3) * 2) + ((425 / 3) * overMijToContact)) / 600) * 100 + "%";
+          }
+        } else {
+          document.getElementById("nav-item-4").style.color = "#7a9cfb";
+        }
+
+        if (scrolled > contactPercentage){
+          document.getElementById("myBar").style.width = 101 + "%";
+        }
+      }
+
+      function toggleNav() {
+        document.getElementById("mobile-nav").classList.toggle("hidden");
+      }
+
+    </script>
+  </body>
+</html>
+<!-- Voeg datum toe bij leeftijd -->
