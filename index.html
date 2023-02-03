@@ -11,7 +11,10 @@
       href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+    />
     <title>Portfolio Niels van den Broek</title>
   </head>
   <body>
@@ -147,15 +150,15 @@
     <!-- Voor het maken van de scroll bar, heb ik deze website gebruikt: https://www.w3schools.com/howto/howto_js_scroll_indicator.asp -->
     <script>
       // When the user scrolls the page, execute myFunction
-      window.onload = function() {
+      window.onload = function () {
         loadProgressBar();
-      }
+      };
       window.onscroll = function () {
         progressBar();
       };
 
       function loadProgressBar() {
-        var startPosition = ((175 / 600) * 100);
+        var startPosition = (175 / 600) * 100;
         document.getElementById("myBar").style.width = startPosition + "%";
       }
 
@@ -166,7 +169,7 @@
           document.documentElement.scrollHeight -
           document.documentElement.clientHeight;
         var scrolled = (winScroll / height) * 100;
-        
+
         var mijnWerkPosition = document.getElementById("mijn-werk").offsetTop;
 
         var overMijPosition = document.getElementById("over-mij").offsetTop;
@@ -177,16 +180,19 @@
         var overMijPercentage = (overMijPosition / height) * 100 - 1;
         var contactPercentage = (contactPosition / height) * 100 - 1;
 
-        var homeToMijnWerk = (winScroll / mijnWerkPosition);
-        var mijnWerkToOverMij = ((winScroll - mijnWerkPosition) / (overMijPosition - mijnWerkPosition));
-        var overMijToContact = ((winScroll - overMijPosition) / (contactPosition - overMijPosition));
+        var homeToMijnWerk = winScroll / mijnWerkPosition;
+        var mijnWerkToOverMij =
+          (winScroll - mijnWerkPosition) / (overMijPosition - mijnWerkPosition);
+        var overMijToContact =
+          (winScroll - overMijPosition) / (contactPosition - overMijPosition);
 
-        var startPosition = ((175 / 600) * 100);
+        var startPosition = (175 / 600) * 100;
 
         if (scrolled <= mijnWerkPercentage) {
           document.getElementById("nav-item-2").style.color = "white";
-          if(scrolled > 0){
-            document.getElementById("myBar").style.width = startPosition + (((425 / 3) * (homeToMijnWerk)) / 600) * 100 + "%";
+          if (scrolled > 0) {
+            document.getElementById("myBar").style.width =
+              startPosition + (((425 / 3) * homeToMijnWerk) / 600) * 100 + "%";
           }
         } else {
           document.getElementById("nav-item-2").style.color = "#91def9";
@@ -194,8 +200,11 @@
 
         if (scrolled <= overMijPercentage) {
           document.getElementById("nav-item-3").style.color = "white";
-          if(scrolled > mijnWerkPercentage){
-            document.getElementById("myBar").style.width = startPosition + (((425 / 3) + ((425 / 3) * mijnWerkToOverMij)) / 600) * 100 + "%";
+          if (scrolled > mijnWerkPercentage) {
+            document.getElementById("myBar").style.width =
+              startPosition +
+              ((425 / 3 + (425 / 3) * mijnWerkToOverMij) / 600) * 100 +
+              "%";
           }
         } else {
           document.getElementById("nav-item-3").style.color = "#6ec0fb";
@@ -203,14 +212,17 @@
 
         if (scrolled <= contactPercentage) {
           document.getElementById("nav-item-4").style.color = "white";
-          if(scrolled > overMijPercentage){
-            document.getElementById("myBar").style.width = startPosition + ((((425 / 3) * 2) + ((425 / 3) * overMijToContact)) / 600) * 100 + "%";
+          if (scrolled > overMijPercentage) {
+            document.getElementById("myBar").style.width =
+              startPosition +
+              (((425 / 3) * 2 + (425 / 3) * overMijToContact) / 600) * 100 +
+              "%";
           }
         } else {
           document.getElementById("nav-item-4").style.color = "#7a9cfb";
         }
 
-        if (scrolled > contactPercentage){
+        if (scrolled > contactPercentage) {
           document.getElementById("myBar").style.width = 101 + "%";
         }
       }
@@ -218,7 +230,6 @@
       function toggleNav() {
         document.getElementById("mobile-nav").classList.toggle("hidden");
       }
-
     </script>
   </body>
 </html>
