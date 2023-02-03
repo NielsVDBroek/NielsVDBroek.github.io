@@ -434,6 +434,10 @@ h5 {
     display: flex;
     flex-direction: column;
   }
+
+  .mijn-werk-component-page-main-info {
+    font-size: 11pt;
+  }
 }
 
 /* Media query for mobile */
@@ -696,6 +700,10 @@ h5 {
 
   .mijn-werk-component-page-main{
     padding: 20px;
+  }
+
+  .mijn-werk-component-page-main-info {
+    font-size: 10pt;
   }
 
   .over-mij-text {
