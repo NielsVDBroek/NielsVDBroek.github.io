@@ -7,17 +7,12 @@
     <link rel="stylesheet" href="styles/main.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
-    />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"/>
     <title>Portfolio Niels van den Broek</title>
   </head>
   <body>
+    <!-- De header die vertoont wordt op een desktop en tablet -->
     <header class="header">
       <!-- Deze website gebruikt voor het linken naar een bepaalde plek in de pagina https://blog.hubspot.com/marketing/jump-link-same-page -->
       <nav class="nav-bar">
@@ -26,10 +21,13 @@
         <a id="nav-item-3" class="nav-item" href="#over-mij">Over mij</a>
         <a id="nav-item-4" class="nav-item" href="#contact">Contact</a>
       </nav>
+      <!-- Progress bar die laat zien hoe ver je bent op de pagina -->
       <div class="progress-container">
         <div class="progress-bar" id="myBar"></div>
       </div>
+      <!-- De navigatie voor op de mobiel -->
       <nav class="nav-bar-mobile">
+        <!-- Opent de side nav waarin de anchor tags staan naar plekken in de pagina -->
         <div class="hamburger-menu" onclick="toggleNav()">
           <span></span>
           <span></span>
@@ -37,9 +35,11 @@
         </div>
       </nav>
     </header>
+    <!-- Mobile sideNav -->
     <nav class="nav-bar-mobile-open hidden" id="mobile-nav">
       <div class="nav-bar-mobile-open-container">
         <div class="nav-bar-open-exit">
+          <!-- X teken waarmee de sideNav weg geklikt kan worden -->
           <i class="fa-solid fa-xmark" onclick="toggleNav()"></i>
         </div>
         <div class="nav-bar-mobile-open-items">
@@ -51,6 +51,7 @@
       </div>
     </nav>
     <main>
+      <!-- Home pagina -->
       <div class="page" id="home">
         <div class="home-container">
           <div class="home-text">
@@ -75,8 +76,10 @@
           </div>
         </div>
       </div>
+      <!-- Mijn werk -->
       <div class="page" id="mijn-werk">
         <h2>Mijn werk</h2>
+        <!-- De twee links naar de pagina's over de projecten -->
         <div class="mijn-werk-container">
           <a class="mijn-werk-component" href="sub-pages/component-library.html">
             <div class="mijn-werk-component-title">
@@ -114,6 +117,7 @@
           </a>
         </div>
       </div>
+      <!-- Over mij -->
       <div class="page" id="over-mij">
         <h2>Over mij</h2>
         <div class="over-mij-text">
@@ -130,6 +134,7 @@
           </p>
         </div>
       </div>
+      <!-- Contact -->
       <div class="page" id="contact">
         <h2>Contact</h2>
         <div class="contact-container">
@@ -155,11 +160,14 @@
         progressBar();
       };
 
+      // Wanneer de pagina laad, start de progress bar op de begin positie.
       function loadProgressBar() {
         var startPosition = (175 / 600) * 100;
         document.getElementById("myBar").style.width = startPosition + "%";
       }
 
+      // vergroot de Progress bar op basis van hoever gescrolled is in de pagina.
+      // De grote van de pagina's wordt berekent en daardoor kan boven in de header de scrollbar op een bepaalde plek staan als je op een bepaalde plek staat in de pagina.
       function progressBar() {
         var winScroll =
           document.body.scrollTop || document.documentElement.scrollTop;
@@ -186,6 +194,7 @@
 
         var startPosition = (175 / 600) * 100;
 
+        // De kleur van de tekst in de nav wordt veranderd op basis van op je al bij die pagina bent of niet.
         if (scrolled <= mijnWerkPercentage) {
           document.getElementById("nav-item-2").style.color = "white";
           if (scrolled > 0) {
@@ -231,4 +240,3 @@
     </script>
   </body>
 </html>
-<!-- Voeg datum toe bij leeftijd -->
