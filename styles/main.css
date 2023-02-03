@@ -302,6 +302,21 @@ h5 {
   min-height: 200px;
   display: flex;
   flex-direction: column;
+  gap: 3em;
+}
+
+.component-library-images-container{
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 3em;
+}
+
+.component-library-images{
+  width: 100%;
+  height: auto;
+  border-radius: 5px;
 }
 
 /* Media query for tablet */
@@ -677,6 +692,10 @@ h5 {
     padding: 0 20px 20px 20px;
     display: flex;
     flex-direction: column;
+  }
+
+  .mijn-werk-component-page-main{
+    padding: 20px;
   }
 
   .over-mij-text {
