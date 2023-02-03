@@ -301,7 +301,7 @@ h5 {
   height: auto;
   min-height: 200px;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
 }
 
 /* Media query for tablet */
